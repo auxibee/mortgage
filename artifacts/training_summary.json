@@ -1,0 +1,84 @@
+{
+  "selected_model": "Random Forest",
+  "validation_comparison": [
+    {
+      "Model": "Random Forest",
+      "MAE": 19751.45392770513,
+      "RMSE": 27795.956031925005,
+      "R2": 0.9920912477044195
+    },
+    {
+      "Model": "Extra Trees",
+      "MAE": 19391.309937001355,
+      "RMSE": 27873.750938093308,
+      "R2": 0.9920469159582346
+    },
+    {
+      "Model": "Decision Tree",
+      "MAE": 29701.71203976457,
+      "RMSE": 40072.41273900375,
+      "R2": 0.9835625015385726
+    },
+    {
+      "Model": "Linear Regression",
+      "MAE": 49726.76996940244,
+      "RMSE": 68165.96562285199,
+      "R2": 0.9524358298686255
+    },
+    {
+      "Model": "Gradient Boosting",
+      "MAE": 60226.008512510685,
+      "RMSE": 85347.51661705846,
+      "R2": 0.9254364598968791
+    }
+  ],
+  "final_test_metrics": {
+    "MAE": 18886.45068284899,
+    "RMSE": 25761.557505978955,
+    "R2": 0.9930622783146505
+  },
+  "test_rows": 7499,
+  "top_shap_features": [
+    {
+      "Feature": "Annual Income (USD)",
+      "Mean_Absolute_SHAP": 184700.3785640487
+    },
+    {
+      "Feature": "Credit Score",
+      "Mean_Absolute_SHAP": 84140.45120538346
+    },
+    {
+      "Feature": "Interest Rate",
+      "Mean_Absolute_SHAP": 78533.68564099974
+    },
+    {
+      "Feature": "Existing Monthly Debt (USD)",
+      "Mean_Absolute_SHAP": 72701.20670112074
+    },
+    {
+      "Feature": "Down Payment (USD)",
+      "Mean_Absolute_SHAP": 21475.25546914951
+    },
+    {
+      "Feature": "Loans Repaid",
+      "Mean_Absolute_SHAP": 209.36266464133624
+    },
+    {
+      "Feature": "Employment Years",
+      "Mean_Absolute_SHAP": 194.86568863611242
+    },
+    {
+      "Feature": "Area_Urban",
+      "Mean_Absolute_SHAP": 65.35320269688997
+    },
+    {
+      "Feature": "Area_Suburban",
+      "Mean_Absolute_SHAP": 47.36914043586425
+    },
+    {
+      "Feature": "Job_Business Owner",
+      "Mean_Absolute_SHAP": 8.557887676347603
+    }
+  ],
+  "reason_code_rows": 500
+}
