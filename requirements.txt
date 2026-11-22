@@ -9,3 +9,5 @@ uvicorn[standard]>=0.27
 streamlit>=1.32
 pyodbc>=5.0
 python-dotenv>=1.0
+psycopg[binary]>=3.2
+
