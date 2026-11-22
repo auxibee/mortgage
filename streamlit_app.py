@@ -304,6 +304,7 @@ with tab_application:
                             underwriter_id=underwriter_id,
                         )
                         st.success(f"Underwriting decision saved. Decision ID: {decision_id}")
+                        st.rerun()
                     except Exception as exc:
                         st.error(f"Could not save underwriting decision: {exc}")
 
