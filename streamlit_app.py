@@ -208,7 +208,7 @@ with tab_application:
                     )
                 if manual_submitted:
                     try:
-                        decision_id = MortgageRepository().save_underwriting_decision(
+                        decision_id = MortgageRepository("postgresql://postgres.ypyqiqkcrjwtmmkzcfxc:6s2npGObxuQ5RwvG@aws-1-us-east-1.pooler.supabase.com:5432/postgres").save_underwriting_decision(
                             application_id=st.session_state["last_application_id"],
                             prediction_id=int(prediction_id),
                             decision=manual_decision,
@@ -293,7 +293,7 @@ with tab_application:
                     )
                 if decision_submitted:
                     try:
-                        repository = MortgageRepository()
+                        repository = MortgageRepository("postgresql://postgres.ypyqiqkcrjwtmmkzcfxc:6s2npGObxuQ5RwvG@aws-1-us-east-1.pooler.supabase.com:5432/postgres")
                         decision_id = repository.save_underwriting_decision(
                             application_id=st.session_state["last_application_id"],
                             prediction_id=int(prediction_id),
@@ -313,7 +313,7 @@ with tab_database:
         st.info("Configure POSTGRES_DSN in your .env file to view saved database activity.")
     else:
         try:
-            repository = MortgageRepository()
+            repository = MortgageRepository("postgresql://postgres.ypyqiqkcrjwtmmkzcfxc:6s2npGObxuQ5RwvG@aws-1-us-east-1.pooler.supabase.com:5432/postgres")
             st.success("Connected to PostgreSQL")
             operations = repository.recent_operations(limit=250)
             if operations:
