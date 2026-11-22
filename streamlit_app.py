@@ -63,7 +63,7 @@ with st.sidebar:
     st.subheader("PostgreSQL connection")
     if os.getenv("POSTGRES_DSN"):
         try:
-            MortgageRepository("postgresql://postgres.ypyqiqkcrjwtmmkzcfxc:7aKBRpabgqkZSYZC@aws-1-us-east-1.pooler.supabase.com:5432/postgres").health_check()
+            MortgageRepository().health_check()
             st.success("PostgreSQL connected")
         except Exception as exc:
             st.error(f"PostgreSQL connection failed: {exc}")
