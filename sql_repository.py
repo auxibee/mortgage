@@ -24,7 +24,7 @@ def get_connection_string() -> str:
 class MortgageRepository:
     """Store application, scoring, SHAP and underwriting events in PostgreSQL."""
 
-    def __init__(self, connection_string = "postgresql://postgres.ypyqiqkcrjwtmmkzcfxc:7aKBRpabgqkZSYZC@aws-1-us-east-1.pooler.supabase.com:5432/postgres"):
+    def __init__(self, connection_string = "postgresql://default:PhK8dwz2fEcy@ep-noisy-pond-58365379-pooler.us-east-1.aws.neon.tech/Mortgage?sslmode=require&channel_binding=require"):
         self.connection_string = connection_string or get_connection_string()
 
     def connect(self):
