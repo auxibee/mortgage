@@ -31,6 +31,12 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+# A successful final database insert requests a complete application reset.
+# This runs at the start of the next Streamlit run, before any widgets are
+# created, so all form values and stored scoring results return to defaults.
+if st.session_state.get("_reset_app_after_db_insert", False):
+    st.session_state.clear()
+
 
 @st.cache_resource(show_spinner="Loading trained mortgage model and SHAP explainer...")
 def load_scorer() -> MortgageScorer:
@@ -217,7 +223,10 @@ with tab_application:
                             override_reason=manual_note or None,
                             underwriter_id=manual_underwriter,
                         )
-                        st.success(f"Manual underwriting outcome saved. Decision ID: {decision_id}")
+                        # Reset every session value on the next run. The database
+                        # insert has completed successfully before this flag is set.
+                        st.session_state["_reset_app_after_db_insert"] = True
+                        st.rerun()
                     except Exception as exc:
                         st.error(f"Could not save manual underwriting outcome: {exc}")
         else:
@@ -303,7 +312,9 @@ with tab_application:
                             override_reason=override_reason or None,
                             underwriter_id=underwriter_id,
                         )
-                        st.success(f"Underwriting decision saved. Decision ID: {decision_id}")
+                        # Reset every session value on the next run. The database
+                        # insert has completed successfully before this flag is set.
+                        st.session_state["_reset_app_after_db_insert"] = True
                         st.rerun()
                     except Exception as exc:
                         st.error(f"Could not save underwriting decision: {exc}")
