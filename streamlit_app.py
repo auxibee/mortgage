@@ -165,7 +165,7 @@ with tab_application:
         # Persist every scoring attempt, including failed validation, when SQL is configured.
         if os.getenv("POSTGRES_DSN"):
             try:
-                repository = MortgageRepository()
+                repository = MortgageRepository("postgresql://postgres.ypyqiqkcrjwtmmkzcfxc:6s2npGObxuQ5RwvG@aws-1-us-east-1.pooler.supabase.com:5432/postgres")
                 prediction_id = repository.save_scoring_event(application_id, applicant, result)
                 st.session_state["last_prediction_id"] = prediction_id
                 st.session_state["last_db_message"] = f"Saved to PostgreSQL (Prediction ID: {prediction_id})."
