@@ -1,0 +1,54 @@
+{
+  "source_file": "new_mortage_data_set(1).csv",
+  "rows_read": 49990,
+  "rows_used": 49990,
+  "columns": [
+    "Gender",
+    "Age",
+    "Married",
+    "Education",
+    "Job",
+    "Employment Years",
+    "Annual Income (USD)",
+    "Interest Rate",
+    "Down Payment (USD)",
+    "Credit Score",
+    "Existing Monthly Debt (USD)",
+    "Area",
+    "Loans Repaid",
+    "Max Loan Amount (USD)"
+  ],
+  "missing_values_by_column": {
+    "Employment Years": 0,
+    "Annual Income (USD)": 0,
+    "Interest Rate": 0,
+    "Down Payment (USD)": 0,
+    "Credit Score": 0,
+    "Existing Monthly Debt (USD)": 0,
+    "Loans Repaid": 0,
+    "Job": 0,
+    "Area": 0,
+    "Max Loan Amount (USD)": 0
+  },
+  "duplicate_rows_detected": 0,
+  "rows_dropped_missing_target": 0,
+  "rows_excluded_by_basic_domain_checks": 0,
+  "features_used": [
+    "Employment Years",
+    "Annual Income (USD)",
+    "Interest Rate",
+    "Down Payment (USD)",
+    "Credit Score",
+    "Existing Monthly Debt (USD)",
+    "Loans Repaid",
+    "Job",
+    "Area"
+  ],
+  "features_excluded_by_default": [
+    "Gender",
+    "Age",
+    "Married",
+    "Education"
+  ],
+  "target": "Max Loan Amount (USD)"
+}

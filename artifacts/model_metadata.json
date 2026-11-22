@@ -1,0 +1,51 @@
+{
+  "selected_model": "Random Forest",
+  "target": "Max Loan Amount (USD)",
+  "features": [
+    "Employment Years",
+    "Annual Income (USD)",
+    "Interest Rate",
+    "Down Payment (USD)",
+    "Credit Score",
+    "Existing Monthly Debt (USD)",
+    "Loans Repaid",
+    "Job",
+    "Area"
+  ],
+  "numeric_features": [
+    "Employment Years",
+    "Annual Income (USD)",
+    "Interest Rate",
+    "Down Payment (USD)",
+    "Credit Score",
+    "Existing Monthly Debt (USD)",
+    "Loans Repaid"
+  ],
+  "categorical_features": [
+    "Job",
+    "Area"
+  ],
+  "excluded_features": [
+    "Gender",
+    "Age",
+    "Married",
+    "Education"
+  ],
+  "currency": "USD (as labelled in source dataset)",
+  "random_state": 42,
+  "split": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "selection_metric": "Validation RMSE (lower is better)",
+  "final_test_metrics": {
+    "MAE": 18886.001659204692,
+    "RMSE": 25761.694044641245,
+    "R2": 0.9930622047733091
+  },
+  "model_file": "mortgage_model_pipeline.joblib",
+  "shap_version": "0.50.0",
+  "sklearn_version": "1.8.0",
+  "warning": "Prototype only. The target is historical Max Loan Amount, not an observed approval/default outcome or a verified affordability limit. Validate policy, fairness, data provenance and out-of-time performance before real lending use."
+}
